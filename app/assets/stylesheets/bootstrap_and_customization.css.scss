@@ -1,1 +1,8 @@
+$navbar-default-link-color: #00576f;
+$navbar-margin-bottom: 0px;
+
 @import 'bootstrap';
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: 0;
+}
