@@ -77,4 +77,6 @@ Shoplandia::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  Gibbon::API.api_key = ENV['MAILCHIMP_API_KEY']
 end
