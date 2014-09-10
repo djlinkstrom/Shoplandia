@@ -29,7 +29,7 @@ class BetaUsersController < ApplicationController
     respond_to do |format|
       if @beta_user.save
         gb = Gibbon::API.new
-        list_id = '361ef94d9c'
+        list_id = 'a4bf57e523'
         result = gb.lists.subscribe({:id => list_id, 
             :email => {:email => @beta_user.email},
             :double_optin => false,

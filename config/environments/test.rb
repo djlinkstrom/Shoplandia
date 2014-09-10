@@ -34,5 +34,5 @@ Shoplandia::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  Gibbon::API.api_key = 'eee0e25e4e2ef7e7c05279f436cafd54-us8'
+  Gibbon::API.api_key = 'b426b8527c61c8ec2e868c7d1a9cc6e9-us9'
 end
