@@ -22,6 +22,6 @@ module Shoplandia
     # config.i18n.default_locale = :de
     config.assets.initialize_on_precompile = true
     config.assets.precompile =true
-     
+    config.serve_static_assets = true
   end
 end
