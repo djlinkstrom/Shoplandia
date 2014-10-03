@@ -8,23 +8,45 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
+                <%= image_tag "Shoplandia-TM-logo-only-small.png", class:"hidden-xs" %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Team</a>
+                    </li>
+                </ul>
+            </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-      <div class="intro-header">
 
-        <div class="container">
-          <div class="row">
-              <div class="col-lg-12">
-                  <div class="intro-message " >
-                      <h1>Welcome to Shoplandia</h1><br />  
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
+    <div class=" hidden-xs">                                   
+      <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" poster="hero-bg.png">
+
+        <!--<source src="<%= request.protocol + request.host_with_port + asset_path('RoadTrip.mp4') %>" type='video/mp4' />-->
+        <<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+          <!-- <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />-->
+        <!--<source src="RoadTrip.mp4" type="video/mp4">-->
+        <!--<source src="movie.webm" type="video/webm">-->
+          Sorry, your browser does not support HTML5 video.
+      </video> 
+    </div>
+            <div class="container intro-header hidden-xs">
+                <div class="row row-centered hidden-xs">
+                  <div class="col-lg-8 overlay col-lg-offset-2 col-sm-12 hidden-xs">
+                      <h1 >Welcome to Shoplandia</h1>
+                      <h4><i>Change the way you shop and sell</i></h4><br />
+                      <hr class="intro-divider hidden-sm ">
+                        <ul class="list-inline intro-social-buttons hidden-sm">
                             <li>
                               <%= image_tag "apple_appstore_comingsoon.png", alt: "BestTime iPhone App coming soon to app store", class:"img-responsive center-block" %>
 
@@ -33,29 +55,129 @@
                                 <%= image_tag "google_playstore_comingsoon.png", alt: "BestTime iPhone App coming soon to app store", class:"img-responsive center-block" %>
                             </li> 
                           </ul> 
-                        <hr class="intro-divider">
+                        <hr class="intro-divider hidden-sm">
                
-                      <h3 class="text-center-white">Here's your chance to be one of the first users!</h3><br />                      
-                      <div class="custom-center muted">
+                      <h3 class="text-center-white">Here's your chance to be one of the first users!</h3><br />
+
+                       <ul class="list-inline intro-social-buttons hidden-xs " id="select_user">
+                            <li>
+                            <a class= "btn btn-success center-block" onclick="toggle_input('beta_seller');">Better way to sell</a>
+                          </li>
+                          <li>
+                            <a  class= "btn btn-success center-block" onclick="toggle_input('beta_user');">Better way to shop</a>
+                          </li> 
+                        </ul>
+
+                        <div class="custom-center muted" id="form_field" style="display:none;">
                         <%= form_for(@beta_user) do |f| %>
                           <div class="custom-center muted">
                               <%= f.text_field :email, size: "35", placeholder: "Enter your email address", class:"muted" %>
+                              <div style="display:none;">
+                                <div class="form-group row">
+                                    <%= f.label :type, class: "col-sm-2 control-label" %>
+                                    <div class="col-sm-10">
+                                      <%= f.text_field :type, class: "form-control" %>
+                                    </div>
+                                </div>
+                              </div>
                          
                             <%= f.submit "Sign Me Up", class: "btn btn-success" %>
+                            <br /><br />
                           </div>
                         <% end %>
                       </div>
+
+                      
+                        
                   </div>
               </div>
+          </div>
+           <div class="container intro-header hidden-lg hidden-md hidden-sm">
+            <div class="row row-centered hidden-lg hidden-md hidden-sm">
+                  <div class="col-sm-6 col-sm-offset-3 hidden-lg hidden-md hidden-sm overlay-orange" style="margin-bottom:-50px;">
+                    
+                    <br />
+                    <br />
+                    <br />
+                    <%= image_tag "Shoplandia-TM-logo-white.png", class:"img-responsive" %>
+                    <br />
+                    <br />
+                    <h4><i>Change the way you shop or sell</i></h4>
+                    <br />
+
+                    <div class="visible-xs visible-sm" >
+                      <a class= "btn btn-success "  onclick="toggle_input_sm('beta_seller_sm');" id="select_seller_sm">Better way to sell</a>  
+                      <a class= "btn btn-success " onclick="toggle_input_sm('beta_user_sm');" id="select_buyer_sm">Better way to shop</a>
+                    </div>
+                    <br />
+                    <div class="custom-center muted" id="form_field_sm" style="display:none;">
+                        <%= form_for(@beta_user) do |f| %>
+                          <div class="custom-center muted">
+                              <%= f.text_field :email, size: "35", placeholder: "Enter your email address", class:"muted" %>
+                              <div style="display:none;">
+                                <div class="form-group row">
+                                    <%= f.label :type, class: "col-sm-2 control-label" %>
+                                    <div class="col-sm-10">
+                                      <%= f.text_field :type, class: "form-control" %>
+                                    </div>
+                                </div>
+                              </div>
+                            <%= f.submit "Sign Me Up", class: "btn btn-success" %>
+                            <br /><br />
+                          </div>
+                        <% end %>
+                      </div>
+
+                     
+                    <br />
+                  </div>
+              </div>
+          </div>
+        
+      <!-- /.intro-header -->
+      <div class="content-section-b ">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 custom-center" style="margin-top:100px;">
+                  <h1 class="muted">What is Shoplandia?<br /> </h1>
+                  <br /><p class="lead">The secret to Shoplandia is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis pretium ipsum, eget feugiat sapien imperdiet eget. Nam tempus nisl quis quam consectetur, vel tempor lorem viverra. Curabitur porttitor justo sed nisi ultrices congue. Maecenas facilisis quam ac luctus porta. Nulla ipsum odio, tincidunt id eleifend eu, lacinia id ex. Fusce arcu massa, aliquet sed sollicitudin sit amet, malesuada et ante. Aliquam in diam luctus, volutpat eros ac, aliquam justo. Nullam ornare lobortis dui nec scelerisque. Donec non pulvinar dui. Etiam malesuada scelerisque mauris. Donec in arcu commodo, sollicitudin diam id, consequat risus. Ut nisi lectus, suscipit vitae efficitur ac, malesuada id leo. Sed elementum, metus at consequat porta, libero turpis congue augue, id efficitur lectus magna sit amet ipsum</p>
+                  <br />
+                  <h2 class="muted">Tag Line!</h2> <br /> <br />
+                </div>
             </div>
         </div>
       </div>
-      
+
+        
 
 
+              
 
+<script type="text/javascript"> 
+  function toggle_input(id) {
+    if(id == 'beta_seller'){
+      document.getElementById("beta_user_type").value = "Seller";
+    } 
+    else{
+      document.getElementById("beta_user_type").value = "Buyer";
+    }
 
-  
+  document.getElementById('form_field').style.display = 'inline';
+  document.getElementById('select_user').style.display = 'none';
+  return false;
+}
 
-
-</div>
+ function toggle_input_sm(id) {
+   if(id == 'beta_seller_sm'){
+      document.getElementById("beta_user_type").value = "Seller";
+    } 
+    else{
+      document.getElementById("beta_user_type").value = "Buyer";
+    }
+  document.getElementById('form_field_sm').style.display = 'inline';
+  document.getElementById('select_seller_sm').style.display = 'none';
+  document.getElementById('select_buyer_sm').style.display = 'none';
+  return false;
+}
+</script>

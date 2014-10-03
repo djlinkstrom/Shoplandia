@@ -31,9 +31,13 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: image-url("hero-bg.jpg") no-repeat center center;
+    background: image-url("landing-pg-bg.png") no-repeat center center;
     background-size: cover;
+    overflow: visible;
+    color: #fff;
+
 }
+
 
 .intro-header-sm {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */

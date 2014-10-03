@@ -25,11 +25,19 @@ class BetaUsersController < ApplicationController
   # POST /beta_users
   # POST /beta_users.json
   def create
+    puts "$$$$$$$$$$$$$"
+    puts beta_user_params[:email]
+    puts beta_user_params[:type]
     @beta_user = BetaUser.new(beta_user_params)
     respond_to do |format|
+      if @beta_user.type == "Seller"
+        puts "$$$$$$$ seller"
+        list_id = '6c06c0e764'
+      else
+        list_id = 'a4bf57e523'
+      end
       if @beta_user.save
         gb = Gibbon::API.new
-        list_id = 'a4bf57e523'
         result = gb.lists.subscribe({:id => list_id, 
             :email => {:email => @beta_user.email},
             :double_optin => false,
@@ -80,6 +88,6 @@ class BetaUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beta_user_params
-      params.require(:beta_user).permit(:email)
+      params.require(:beta_user).permit(:email, :type)
     end
 end

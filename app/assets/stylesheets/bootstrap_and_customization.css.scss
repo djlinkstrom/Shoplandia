@@ -1,8 +1,44 @@
-$navbar-default-link-color: #00576f;
+$navbar-default-link-color: #808285;
 $navbar-margin-bottom: 0px;
+$font-size-h1: 50px;
+
+
+
+@media all and (max-device-width: 640px){
+    h2 {
+     font-size: 20px;
+  }
+  h1 {
+     font-size: 20px;
+  }
+  h4 {
+     font-size: 16px;
+  }
+}
+
+@media all and (max-device-width: 320px){
+    h2 {
+     font-size: 20px;
+  }
+  h1 {
+     font-size: 20px;
+  }
+  h4 {
+     font-size: 16px;
+  }
+}
 
 @import 'bootstrap';
 
 .navbar-nav.navbar-right:last-child {
     margin-right: 0;
 }
+
+
+
+
+
+
+
+
+
