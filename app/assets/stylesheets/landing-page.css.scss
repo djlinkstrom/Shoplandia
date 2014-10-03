@@ -144,6 +144,38 @@ h6 {
     margin-top: 0;
 }
 
+.muted {
+   color: #5a5a5a;
+
+}
+
+.inline-override{
+    display:inline;
+}
+
+.overlay{   
+    background: rgba(0,0,0,0.3);
+}
+
+.overlay-orange{
+    background: rgba(227,107,54,.8);
+}
+
+.videobcg { 
+
+     top: 50px;
+     left: 0px;
+
+     height: auto;
+
+
+
+    position: absolute;
+    
+    width: 100%!important;
+    overflow: hidden!important;
+}
+
 @media(max-width:1199px) {
     ul.banner-social-buttons {
         float: left;
@@ -178,36 +210,6 @@ p.copyright {
     margin: 15px 0 0;
 }
 
-.muted {
-   color: #5a5a5a;
 
-}
-
-.inline-override{
-    display:inline;
-}
-
-.overlay{   
-    background: rgba(0,0,0,0.3);
-}
-
-.overlay-orange{
-    background: rgba(227,107,54,.8);
-}
-
-.videobcg { 
-
-     top: 50px;
-     left: 0px;
-
-     height: auto;
-
-
-
-    position: absolute;
-    
-    width: 100%!important;
-    overflow: hidden!important;
-}
 
 
