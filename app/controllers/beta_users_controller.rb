@@ -44,7 +44,7 @@ class BetaUsersController < ApplicationController
             :send_welcome => true})
         puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
         puts result
-        flash[:success] = "Welcome to Shoplandia! We will contact you soon."
+        flash[:success] = "Thank you for your interest. We will invite you to join Shoplandia soon. Our product is currently being developed, and we will invite users in small groups to test drive our app."
         #redirect_to root_path
         #BetaMailer.welcome_email(@beta_user).deliver
         format.html { redirect_to root_path }
